@@ -1,0 +1,33 @@
+<clr-datagrid>
+  <clr-dg-column>
+    <ng-container *clrDgHideableColumn="{hidden:false}">
+        Name
+    </ng-container>
+  </clr-dg-column>
+  <clr-dg-column>
+      <ng-container *clrDgHideableColumn="{hidden:false}">
+          Node
+      </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container *clrDgHideableColumn="{hidden:false}">
+            Status
+        </ng-container>
+      </clr-dg-column>
+     <clr-dg-column>
+          <ng-container *clrDgHideableColumn="{hidden:false}">
+              Containers
+          </ng-container>
+     </clr-dg-column>
+  <clr-dg-row *clrDgItems="let p of pods" [clrDgItem]="pods">
+    <clr-dg-cell>{{p.name}}</clr-dg-cell>
+    <clr-dg-cell>{{p.nodeName}}</clr-dg-cell>
+    <clr-dg-cell>{{p.phase}}</clr-dg-cell>
+    <clr-dg-cell>
+      <p *ngFor="let c of p.containers">
+          {{c.name}} : {{c.image}}
+      </p>
+    </clr-dg-cell>
+  </clr-dg-row>
+  <clr-dg-footer>{{pods.length}} pods </clr-dg-footer>
+</clr-datagrid>

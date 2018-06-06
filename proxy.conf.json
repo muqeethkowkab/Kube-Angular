@@ -1,0 +1,12 @@
+{
+  "/**": {
+      "target": {
+              "host": "100.68.123.195",
+              "protocol": "https:",
+              "port": 6443
+            },
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "info"
+    }
+}
